@@ -38,8 +38,10 @@ while switch:
         print('Se acabaron los intentos')
     usuario_pass = input('Desea seguir jugando?. (s/n)').lower()
     if usuario_pass == 's':
+        limpiador_consola.limpiador()
         switch = True
     elif usuario_pass == 'n':
+        limpiador_consola.limpiador()
         switch = False
         print('Gracias por haber jugado.')
         break
