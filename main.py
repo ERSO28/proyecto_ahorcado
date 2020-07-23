@@ -1,17 +1,32 @@
 from funciones import limpiador_consola
+from diccionario import lista_palabras
+from diccionario import lista_significados
 import random
+
+
+def obtener_palabra():
+    palabra = lista_palabras[indice]
+    return palabra
+
+
+def obtener_signficado():
+    significado = lista_significados[indice]
+    return significado
 
 
 switch = True
 print('AHORCADO')
 while switch:
-    palabra_secreta = random.choice(['cesped', 'sol', 'pasto', 'python'])
+    indice = random.randint(0, 9)
+    palabra_secreta = obtener_palabra()
+    significado_palabra = obtener_signficado()
+    print(significado_palabra)
     palabra_oculta = '-' * len(palabra_secreta)
     errores = 0
     letras_usuario = set()
-    while errores < 8:
+    while errores < 6:
         print(palabra_oculta)
-        # print(palabra_secreta)
+        print(palabra_secreta)
         if palabra_oculta in palabra_secreta:
             print('Lo lograste!')
             break
@@ -48,5 +63,4 @@ while switch:
     else:
         usuario_pass = input('Introduzca un caracter valido.')
 
-    # TODO: Agregar diccionario de palabras.
     # TODO: Agregar funcion para diseño de muñecos.
