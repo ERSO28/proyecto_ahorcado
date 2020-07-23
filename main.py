@@ -1,6 +1,7 @@
 from funciones import limpiador_consola
-from diccionario import lista_palabras
-from diccionario import lista_significados
+from diccionarios.diccionario import lista_palabras
+from diccionarios.diccionario import lista_significados
+from diccionarios.ahorcados import fases
 import random
 
 
@@ -49,6 +50,7 @@ while switch:
                             palabra_listada[i] = letra
                             palabra_oculta = ''.join(palabra_listada)
             letras_usuario.add(letra)
+            print(fases[errores])
     else:
         print('Se acabaron los intentos')
     usuario_pass = input('Desea seguir jugando?. (s/n)').lower()
