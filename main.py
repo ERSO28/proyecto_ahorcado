@@ -2,6 +2,7 @@ from funciones import limpiador_consola
 from diccionarios.diccionario import lista_palabras
 from diccionarios.diccionario import lista_significados
 from diccionarios.ahorcados import fases
+
 import random
 
 
@@ -15,19 +16,22 @@ def obtener_signficado():
     return significado
 
 
+cian_subrayado = "BIENVENIDO"
 switch = True
-print('AHORCADO')
+print(cian_subrayado)
+limpiador_consola.limpiador()
 while switch:
     indice = random.randint(0, 9)
     palabra_secreta = obtener_palabra()
     significado_palabra = obtener_signficado()
+    print()
     print(significado_palabra)
     palabra_oculta = '-' * len(palabra_secreta)
     errores = 0
     letras_usuario = set()
     while errores < 6:
         print(palabra_oculta)
-        print(palabra_secreta)
+        #print(palabra_secreta)
         if palabra_oculta in palabra_secreta:
             print('Lo lograste!')
             break
